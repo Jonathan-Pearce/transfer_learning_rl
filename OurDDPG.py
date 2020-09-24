@@ -86,35 +86,7 @@ class DDPG(object):
                 self.max_action = max_action
                 
                 
-                
-                
-                """
-                self.actor = Actor(state_dim, action_dim, max_action).to(device)
-		self.actor_target = Actor(state_dim, action_dim, max_action).to(device)
-		
-                print('opening model: %s/%s_%s_actor.pth' % ('./pytorch_models','OurDDPG_HopperBulletEnv-v0',str(0)))
-                self.actor_transfer = Actor(state_dim, action_dim, max_action).to(device)
-                self.actor_transfer.load_state_dict(torch.load('%s/%s_%s_actor.pth' % ('./pytorch_models','OurDDPG_HopperBulletEnv-v0',str(0)),map_location=device))
-                #self.actor_transfer.l1 = nn.Linear(state_dim, 400)
-                self.actor_transfer.l3 = nn.Linear(300, action_dim)
-
-                self.actor.load_state_dict(self.actor_transfer.state_dict())
-                self.actor_target.load_state_dict(self.actor.state_dict())
-		self.actor_optimizer = torch.optim.Adam(self.actor.parameters())
-
-		self.critic = Critic(state_dim, action_dim).to(device)
-		self.critic_target = Critic(state_dim, action_dim).to(device)
-		
-                self.critic_transfer = Critic(state_dim, action_dim).to(device)
-                self.critic_transfer.load_state_dict(torch.load('%s/%s_%s_critic.pth' % ('./pytorch_models','OurDDPG_HopperBulletEnv-v0',str(0)),map_location=device))
-                #self.critic_transfer.l1 = nn.Linear(state_dim + action_dim, 400)
-                self.critic_transfer.l3 = nn.Linear(300, 1)
-
-                self.critic.load_state_dict(self.critic_transfer.state_dict())
-                self.critic_target.load_state_dict(self.critic.state_dict())
-		self.critic_optimizer = torch.optim.Adam(self.critic.parameters())
-
-                """
+           
 
 
 	def select_action(self, state):
